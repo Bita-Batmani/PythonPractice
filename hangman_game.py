@@ -17,10 +17,13 @@ print(myList)
 # Game loop
 while("_" in myList):
     guess_letter = input("Guess a letter: ").lower()
+    if len(guess_letter) != 1 or not guess_letter.isalpha():
+        print("Please enter a single letter!")
+    
     for position in range(len(random_word)):
         if random_word[position] == guess_letter:
             myList[position] = guess_letter
     print(myList)
-
+    continue
 print(myList)
 print("Yay, You Won!")
